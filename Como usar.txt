@@ -1,0 +1,19 @@
+https://www.youtube.com/watch?v=FKMd9BnjMqo
+
+- Crie as imagens positivas: imagens que contém os objetos a serem detectados e marcadas com checkbox
+- Crie as imagens negativas: imagens em preto e branco sem o objeto a ser detectado
+
+Mova as imagens positivas para a pasta positive>raw
+Mova as imagens negativas para a pasta negative   Execute o create_list.bat para preencher o arquivo bg.txt com o nome das imagens.
+
+A partir disso, vamos recortar as imagens positivas. Ou seja, criar o delimitador do objeto que queremos.
+	Na pasta positive execute o objectmarker.exe e selecione a parte que deseja reconhecer. Espaço para salvar a detecção,
+	caso tenha mais de uma basta fazer a seleção de novo e aperta espaço para salvar. Para pular as imagens click enter.
+
+Terminando a seleção volte na pasta principal e execute o 01 samples_creation.bat. vai criar arquivos na pasta vector.
+Na pasta cascades, deixa limpa. Agora abra o 02 harrtraining.bat em um bloco de notas ou qualquer editor de arquivo e troque os seguintes parametro: 
+	-nneg <quantidade de negativos>
+	-npos <quantidade de positivas>	
+	- salve
+	- agora execute-o 
+Após isso execute o 03 convert.bat ele vai gerar o arquivo.xml
